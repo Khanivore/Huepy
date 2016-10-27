@@ -1,3 +1,6 @@
+# Show UPnP devices discovered
+# Python 3
+
 import socket
 
 msg = \
@@ -13,10 +16,10 @@ s.settimeout(2)
 s.sendto( bytes(msg, "utf-8"), ('239.255.255.250', 1900) )
  
 try:
-	while True:
-		data, addr = s.recvfrom(65507)
-		print(addr)
-		print(data)
-		print("===============================")
+    while True:
+        data, addr = s.recvfrom(65507)
+        print(addr)
+        print(data)
+        print("===============================")
 except socket.timeout:
-	pass
+    pass
